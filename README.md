@@ -8,6 +8,9 @@ testing locally, add to /etc/hosts:
 127.0.0.1 1.mcmattco.com 2.mcmattco.com
 
 ## build container
+
+https://phoenixnap.com/kb/how-to-set-up-nginx-server-blocks-virtual-hosts-centos-7
+
 docker build -t nginx-multidomain .
 
 ## run container
