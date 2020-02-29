@@ -1,6 +1,6 @@
 # multidomain
 END GOAL:
-2 domains > elb > ingress controller with paths > nginx pods with host server blocks
+2 subdomains > aws elb > k8s ingress controller with paths > nginx pods with host server blocks
 
 testing locally, add to /etc/hosts:
 127.0.0.1 1.mcmattco.com 2.mcmattco.com
