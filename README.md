@@ -2,6 +2,7 @@
 END GOAL:
 
 2 subdomains > aws elb > k8s ingress controller with paths > nginx pods with host server blocks
+
 and TLS somewhere
 
 ## testing locally, add to /etc/hosts:
