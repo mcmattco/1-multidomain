@@ -8,4 +8,4 @@ RUN mkdir /usr/share/nginx/html/1 && \
 COPY 1.conf /etc/nginx/conf.d/1.conf
 COPY 2.conf /etc/nginx/conf.d/2.conf
 
-EXPOSE 80
+EXPOSE 80 443
