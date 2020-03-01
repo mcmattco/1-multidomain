@@ -16,7 +16,7 @@ https://phoenixnap.com/kb/how-to-set-up-nginx-server-blocks-virtual-hosts-centos
 docker build -t nginx-multidomain .
 
 ## run container
-docker run -d -p 80:80 nginx-multidomain
+docker run -d -p 80:80 -p 443:443 nginx-multidomain
 
 ## hit both domains, get different pages
 1.mcmattco.com
