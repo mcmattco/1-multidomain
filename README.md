@@ -2,8 +2,9 @@
 END GOAL:
 
 2 subdomains > aws elb > k8s ingress controller with paths > nginx pods with host server blocks
+and TLS somewhere
 
-testing locally, add to /etc/hosts:
+##testing locally, add to /etc/hosts:
 
 127.0.0.1 1.mcmattco.com 2.mcmattco.com
 
