@@ -5,25 +5,13 @@ END GOAL:
 
 and TLS somewhere
 
-## IGNORE testing locally, add to /etc/hosts:
-
-127.0.0.1 1.mcmattco.com 2.mcmattco.com
-
 ## Build and push container
 
 https://phoenixnap.com/kb/how-to-set-up-nginx-server-blocks-virtual-hosts-centos-7
 
-docker build -t nginx-multidomain .
-docker tag 577 mcmattco/nginx_multidomain:v1
-docker push mcmattco/nginx_multidomain:v1 
-
-## IGNORE run container
-docker run -d -p 80:80 -p 443:443 nginx-multidomain
-
-## IGNORE hit both domains, get different pages
-1.mcmattco.com
-
-2.mcmattco.com
+    docker build -t nginx-multidomain .
+    docker tag 577 mcmattco/nginx_multidomain:v1
+    docker push mcmattco/nginx_multidomain:v1 
 
 ## deploy container in k8s
 
@@ -36,7 +24,7 @@ docker run -d -p 80:80 -p 443:443 nginx-multidomain
     k apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.30.0/deploy/static/provider/aws/service-l4.yaml
     k apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.30.0/deploy/static/provider/aws/patch-configmap-l4.yaml
 
-This sets up the ELB, check it's status and get the external DNS name with k get svc -n nginx-ingress
+This sets up the ELB, check it's status and get the external DNS name with `k get svc -n nginx-ingress`
 
 Create CNAME records using ELB name for relevant subdomains (a.mcmattco.com, b.mcmattco.com, and test.mcmattco.com in this case)
 
