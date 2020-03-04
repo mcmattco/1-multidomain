@@ -1,7 +1,7 @@
 # Multidomain project
 INITIAL END GOAL:
 
-2 subdomains > aws elb > k8s ingress controller routing by hosts > nginx pod with host server blocks
+2 subdomains > aws elb > ingress controller with virtual host routing > nginx pod with virtual host routing
 
 and TLS somewhere using cert-manager
 
