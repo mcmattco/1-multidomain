@@ -1,3 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx-multidomain
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-multidomain
+  template:
+    metadata:
+      labels:
+        app: nginx-multidomain
+    spec:
+      containers:
+      - name: nginx-multidomain
+        image: mcmattco/nginx-multidomain:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-multidomain
+spec:
+  selector:
+    app: nginx-multidomain
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
