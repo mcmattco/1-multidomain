@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1.21
 
 RUN mkdir /usr/share/nginx/html/1 && \
     mkdir /usr/share/nginx/html/2 && \
